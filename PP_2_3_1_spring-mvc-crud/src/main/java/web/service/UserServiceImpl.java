@@ -18,7 +18,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional
     public List<User> getAllUsers() {
 
         return userDAO.getAllUsers();
@@ -32,7 +31,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional
     public User getUser(int id) {
 
         return userDAO.getUser(id);
