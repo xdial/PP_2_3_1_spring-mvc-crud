@@ -13,23 +13,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class HelloController {
+public class CRUDController {
     private final UserService userService;
 
-    @Autowired
-    public HelloController(UserService userService) {
+
+    public CRUDController(UserService userService) {
 
         this.userService = userService;
-    }
-
-    //START PAGE
-    @GetMapping(value = "/")
-    public String printWelcome(ModelMap model) {
-        List<String> messages = new ArrayList<>();
-        messages.add("Hello!");
-        messages.add("Java pre-project.2.3.1\n");
-        model.addAttribute("messages", messages);
-        return "index";
     }
 
     //ALL USERS
@@ -43,6 +33,7 @@ public class HelloController {
     //NEW USER
     @GetMapping("/addNewUser")
     public String addUser(@ModelAttribute("user") User user) {
+
         return "addNewUser";
     }
 
